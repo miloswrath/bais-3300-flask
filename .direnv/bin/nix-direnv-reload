@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 set -e
-if [[ ! -d "/home/zak/school/s26/bais/flask" ]]; then
+if [[ ! -d "/home/zak/school/sp26/bais/flask" ]]; then
   echo "Cannot find source directory; Did you move it?"
-  echo "(Looking for "/home/zak/school/s26/bais/flask")"
+  echo "(Looking for "/home/zak/school/sp26/bais/flask")"
   echo 'Cannot force reload with this script - use "direnv reload" manually and then try again'
   exit 1
 fi
 
 # rebuild the cache forcefully
-_nix_direnv_force_reload=1 direnv exec "/home/zak/school/s26/bais/flask" true
+_nix_direnv_force_reload=1 direnv exec "/home/zak/school/sp26/bais/flask" true
 
 # Update the mtime for .envrc.
 # This will cause direnv to reload again - but without re-building.
-touch "/home/zak/school/s26/bais/flask/.envrc"
+touch "/home/zak/school/sp26/bais/flask/.envrc"
 
 # Also update the timestamp of whatever profile_rc we have.
 # This makes sure that we know we are up to date.
-touch -r "/home/zak/school/s26/bais/flask/.envrc" "/home/zak/school/s26/bais/flask/.direnv"/*.rc
+touch -r "/home/zak/school/sp26/bais/flask/.envrc" "/home/zak/school/sp26/bais/flask/.direnv"/*.rc
