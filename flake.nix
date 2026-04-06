@@ -60,6 +60,7 @@
             ps.scipy
             ps.pyyaml
             ps.flask
+            ps.pip
           ]
           # ++ [catppuccin-jupyterlab] # include the theme here
       );
